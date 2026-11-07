@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lustro – demonstracyjna strona studia auto detailingu | projekt portfolio</title>
+<meta name="description" content="Lustro to demonstracyjna strona premium studia auto detailingu: przykład układu, treści i formularza rezerwacji. Projekt portfolio, nie istniejąca firma.">
+<meta name="theme-color" content="#14161A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314161A'/%3E%3Ctext x='32' y='46' font-size='40' font-family='Arial,sans-serif' font-weight='800' text-anchor='middle' fill='%23C8A46A'%3EL%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Lustro (projekt demonstracyjny)">
+<meta property="og:title" content="Lustro – demonstracyjna strona studia auto detailingu">
+<meta property="og:description" content="Przykładowa strona premium dla studia detailingu: usługi, efekty, proces, FAQ i formularz. Projekt portfolio.">
+<meta property="og:image" content="https://images.pexels.com/photos/31332624/pexels-photo-31332624.jpeg?auto=compress&cs=tinysrgb&w=1200">
+<meta property="og:image:alt" content="Szary samochód w jasnym, nowoczesnym studiu">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14161A;--card:#1C1F24;--line:#2B2F36;--tx:#F2F3F5;--mut:#A7ADB6;--ac:#C8A46A;--ac2:#DDBE88;--r:14px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--tx);font:400 17px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:Manrope,Inter,sans-serif;line-height:1.1;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:700}
+.wrap{width:min(1160px,92%);margin:auto}
+section{padding:clamp(64px,9vw,120px) 0}
+.eyebrow{color:var(--ac);font:600 .8rem Inter;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.lead{color:var(--mut);max-width:60ch;margin-top:16px}
+.btn{display:inline-block;padding:15px 28px;border-radius:999px;font:600 .95rem Inter;text-decoration:none;border:1px solid var(--ac);background:var(--ac);color:#14161A;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--ac2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--tx);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ac);background:transparent}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(20,22,26,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font:800 1.2rem Manrope;text-decoration:none;letter-spacing:.02em}
+.logo span{color:var(--ac)}
+nav ul{display:flex;gap:28px;list-style:none;padding:0}
+nav a{text-decoration:none;color:var(--mut);font-size:.92rem}
+nav a:hover{color:var(--tx)}
+.nav .btn{padding:10px 20px}
+@media(max-width:860px){nav ul{display:none}}
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;padding:0;overflow:hidden}
+.hero{background:radial-gradient(circle at 70% 40%,#2a2f38,#14161A)}
+.noimg{visibility:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,22,26,.94) 8%,rgba(20,22,26,.55) 55%,rgba(20,22,26,.25))}
+.hero .wrap{position:relative;z-index:2;padding:90px 0}
+.hero p{color:#D3D7DD;max-width:46ch;margin:22px 0 34px;font-size:1.12rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+/* services */
+.grid{display:grid;gap:20px;margin-top:48px}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g4{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.card .b{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card p{color:var(--mut);font-size:.95rem;flex:1}
+.price{color:var(--ac);font:700 1.05rem Manrope}
+.price small{color:var(--mut);font:400 .78rem Inter;display:block;margin-top:2px}
+.note{color:var(--mut);font-size:.85rem;margin-top:22px}
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+@media(max-width:860px){.why{grid-template-columns:1fr}}
+.why img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
+.pts{list-style:none;padding:0;margin-top:28px;display:grid;gap:22px}
+.pts li{padding-left:22px;border-left:2px solid var(--ac)}
+.pts b{display:block;font:700 1.05rem Manrope}
+.pts span{color:var(--mut);font-size:.95rem}
+/* before/after */
+.ba{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;margin-top:44px;border:1px solid var(--line);user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .before{filter:grayscale(.85) brightness(.7) contrast(.8) sepia(.2);clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
+.ba .line{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;background:var(--ac);pointer-events:none}
+.ba .line:after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--ac);color:#14161A;display:grid;place-items:center;font-weight:700}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.tag{position:absolute;top:14px;padding:5px 12px;border-radius:99px;background:rgba(20,22,26,.8);font:600 .75rem Inter;letter-spacing:.08em;text-transform:uppercase;z-index:2}
+.tag.l{left:14px}.tag.r{right:14px;color:var(--ac)}
+.gal{grid-template-columns:repeat(3,1fr);margin-top:20px}
+@media(max-width:700px){.gal{grid-template-columns:1fr}}
+.gal img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
+/* steps */
+.steps{grid-template-columns:repeat(4,1fr);counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step{padding-top:20px;border-top:1px solid var(--line)}
+.step:before{counter-increment:s;content:"0" counter(s);color:var(--ac);font:700 .9rem Manrope}
+.step h3{margin:8px 0}
+.step p{color:var(--mut);font-size:.95rem}
+/* reviews */
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.g3{grid-template-columns:1fr}}
+.rev{background:var(--card);border:1px dashed var(--line);border-radius:var(--r);padding:26px}
+.rev p{color:var(--mut)}
+.rev b{display:block;margin-top:14px;font-size:.9rem}
+/* faq */
+.faq{max-width:820px;margin-top:40px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font:600 1.08rem Manrope;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--ac);font-size:1.5rem;line-height:1}
+details[open] summary:after{content:"–"}
+details p{color:var(--mut);margin-top:12px}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,80px)}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+.info{margin-top:28px;display:grid;gap:18px}
+.info dt{color:var(--mut);font-size:.8rem;text-transform:uppercase;letter-spacing:.12em}
+.info dd{margin:2px 0 0;font-weight:500}
+form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,4vw,36px);display:grid;gap:16px}
+label{font-size:.88rem;color:var(--mut);display:grid;gap:6px}
+input,select,textarea{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:13px 14px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--ac);outline:none}
+.err{color:#F0907F;font-size:.82rem;min-height:1em}
+[aria-invalid=true]{border-color:#F0907F}
+#status{padding:14px;border-radius:10px;font-size:.95rem;display:none}
+#status.ok{display:block;background:rgba(120,190,140,.12);color:#9DD6AC}
+#status.bad{display:block;background:rgba(240,144,127,.12);color:#F0907F}
+.mapbox{margin-top:56px;min-height:220px;display:grid;place-items:center;text-align:center;padding:24px;border:1px dashed var(--line);border-radius:var(--r);color:var(--mut);background:var(--card)}
+.demo{background:var(--ac);color:#14161A;text-align:center;font:600 .82rem/1.4 Inter,sans-serif;padding:9px 14px}
+.dn{font-size:.85rem;color:var(--ac2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:rgba(200,164,106,.08)}
+#status.info{display:block;background:rgba(200,164,106,.12);color:var(--ac2)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mut);font-size:.9rem}
+.fl{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.fl ul{display:flex;gap:22px;list-style:none;padding:0;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo" role="note">Projekt demonstracyjny: Lustro to fikcyjne studio, a ta strona jest przykładem realizacji z portfolio.</div>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top">LUSTRO<span>.</span></a>
+  <nav aria-label="Główna nawigacja"><ul>
+   <li><a href="#uslugi">Usługi</a></li><li><a href="#efekty">Efekty</a></li><li><a href="#proces">Proces</a></li><li><a href="#faq">FAQ</a></li><li><a href="#kontakt">Kontakt</a></li>
+  </ul></nav>
+  <a class="btn" href="#kontakt">Umów wizytę</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-label="Wprowadzenie">
+ <!-- Photo: Baris Mukan / Pexels (free licence). Replace with your own studio photo. -->
+ <img referrerpolicy="no-referrer" fetchpriority="high" src="https://images.pexels.com/photos/31332624/pexels-photo-31332624.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Szary samochód w jasnym, nowoczesnym studiu">
+ <div class="wrap">
+  <p class="eyebrow">Auto detailing · Warszawa</p>
+  <h1>Lakier, który<br>wygląda jak nowy.</h1>
+  <p>Korekta lakieru, powłoki ceramiczne i dokładna pielęgnacja wnętrza. Pracujemy powoli i precyzyjnie, bo detale decydują o efekcie.</p>
+  <div class="cta"><a class="btn" href="#kontakt">Umów wizytę</a><a class="btn ghost" href="#efekty">Zobacz efekty</a></div>
+ </div>
+</section>
+
+<section id="uslugi">
+ <div class="wrap">
+  <p class="eyebrow">Usługi · ceny demonstracyjne</p>
+  <h2>Co możemy zrobić<br>dla Twojego auta</h2>
+  <div class="grid g4">
+   <article class="card rv">
+    <img referrerpolicy="no-referrer" loading="lazy" src="https://images.pexels.com/photos/37809565/pexels-photo-37809565.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Polerowanie lakieru maszyną polerską">
+    <div class="b"><h3>Korekta lakieru</h3><p>Usuwanie zmatowień i drobnych rys, przywrócenie głębi i połysku.</p>
+    <div class="price">od 1000 zł<small>cena demo · jednoetapowa</small></div></div>
+   </article>
+   <article class="card rv">
+    <img referrerpolicy="no-referrer" loading="lazy" src="https://images.pexels.com/photos/29909550/pexels-photo-29909550.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Krople wody na masce samochodu z powłoką ochronną">
+    <div class="b"><h3>Powłoka ceramiczna</h3><p>Twarda, hydrofobowa warstwa chroniąca lakier przed UV, solą i zabrudzeniami.</p>
+    <div class="price">od 800 zł<small>cena demo · powłoka roczna</small></div></div>
+   </article>
+   <article class="card rv">
+    <img referrerpolicy="no-referrer" loading="lazy" src="https://images.pexels.com/photos/17029940/pexels-photo-17029940.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Czyszczenie wnętrza samochodu">
+    <div class="b"><h3>Wnętrze i tapicerka</h3><p>Odkurzanie, pranie ekstrakcyjne, czyszczenie plastików i konserwacja.</p>
+    <div class="price">od 500 zł<small>cena demo · pranie tapicerki</small></div></div>
+   </article>
+   <article class="card rv">
+    <img referrerpolicy="no-referrer" loading="lazy" src="https://images.pexels.com/photos/20051458/pexels-photo-20051458.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pracownik pielęgnujący maskę samochodu">
+    <div class="b"><h3>Pielęgnacja karoserii</h3><p>Mycie detailingowe, dekontaminacja lakieru i zabezpieczenie woskiem.</p>
+    <div class="price">od 190 zł<small>cena demo · auto osobowe</small></div></div>
+   </article>
+  </div>
+  <p class="note">Wszystkie ceny na tej stronie są wyłącznie demonstracyjne i nie stanowią oferty. W projekcie dla klienta w tym miejscu pojawia się jego rzeczywisty cennik.</p>
+ </div>
+</section>
+
+<section style="background:#101215">
+ <div class="wrap why">
+  <img referrerpolicy="no-referrer" loading="lazy" src="https://images.pexels.com/photos/31154218/pexels-photo-31154218.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Dwie osoby pracujące przy czarnym samochodzie w warsztacie">
+  <div>
+   <p class="eyebrow">Dlaczego my</p>
+   <h2>Spokojna praca,<br>widoczny efekt</h2>
+   <ul class="pts">
+    <li><b>Ocena stanu lakieru przed startem</b><span>Zanim zaczniemy, mówimy, co da się poprawić i czego nie obiecujemy.</span></li>
+    <li><b>Sprawdzone materiały</b><span>Środki i powłoki dobieramy do rodzaju lakieru i materiałów we wnętrzu.</span></li>
+    <li><b>Jasna wycena</b><span>Cena ustalona przed pracą, bez niespodzianek przy odbiorze.</span></li>
+    <li><b>Uwaga na szczegóły</b><span>Felgi, uszczelki, szyby, każdy element dostaje tyle samo uwagi.</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="efekty">
+ <div class="wrap">
+  <p class="eyebrow">Efekty</p>
+  <h2>Przed i po</h2>
+  <p class="lead">Przesuń suwak, aby zobaczyć, jak działa porównanie. To demonstracja interfejsu: ten sam kadr z filtrem, a nie rzeczywista realizacja.</p>
+  <div class="ba" id="ba">
+   <img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/29809117/pexels-photo-29809117.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Biały sedan po detailingu">
+   <img referrerpolicy="no-referrer" class="before" src="https://images.pexels.com/photos/29809117/pexels-photo-29809117.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+   <span class="tag l">Przed</span><span class="tag r">Po</span>
+   <div class="line"></div>
+   <input type="range" min="0" max="100" value="50" aria-label="Porównanie przed i po">
+  </div>
+  <div class="grid gal">
+   <img referrerpolicy="no-referrer" loading="lazy" src="https://images.pexels.com/photos/20042052/pexels-photo-20042052.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Polerowanie sportowego auta w garażu detailingowym">
+   <img referrerpolicy="no-referrer" loading="lazy" src="https://images.pexels.com/photos/20042048/pexels-photo-20042048.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Produkty i akcesoria do detailingu na stole">
+   <img referrerpolicy="no-referrer" loading="lazy" src="https://images.pexels.com/photos/29504462/pexels-photo-29504462.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Czyszczenie wnętrza samochodu w profesjonalnej myjni">
+  </div>
+ </div>
+</section>
+
+<section id="proces" style="background:#101215">
+ <div class="wrap">
+  <p class="eyebrow">Proces</p>
+  <h2>Jak pracujemy</h2>
+  <div class="grid steps">
+   <div class="step rv"><h3>Kontakt</h3><p>Opisujesz auto i oczekiwania, my proponujemy zakres i termin.</p></div>
+   <div class="step rv"><h3>Ocena</h3><p>Oglądamy lakier i wnętrze, potwierdzamy wycenę.</p></div>
+   <div class="step rv"><h3>Realizacja</h3><p>Mycie, dekontaminacja, korekta lub czyszczenie i zabezpieczenie.</p></div>
+   <div class="step rv"><h3>Odbiór</h3><p>Razem oglądamy efekt, dostajesz wskazówki pielęgnacji.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <p class="eyebrow">FAQ</p>
+  <h2>Najczęstsze pytania</h2>
+  <div class="faq">
+   <details><summary>Ile trwa korekta lakieru?</summary><p>Zwykle od jednego do dwóch dni, w zależności od stanu lakieru i wielkości auta. Dokładny termin podajemy po ocenie.</p></details>
+   <details><summary>Jak długo działa powłoka ceramiczna?</summary><p>Zależy od produktu: od roku do kilku lat. Trwałość zależy też od pielęgnacji, dlatego po odbiorze dostaniesz zalecenia.</p></details>
+   <details><summary>Czy muszę wcześniej myć auto?</summary><p>Nie, mycie i dekontaminacja są częścią usługi.</p></details>
+   <details><summary>Czy korekta usunie każdą rysę?</summary><p>Nie zawsze. Płytkie rysy da się zniwelować, głębokie, do podkładu, wymagają innej naprawy. Powiemy o tym szczerze przed pracą.</p></details>
+   <details><summary>Czy można zostawić auto na cały dzień?</summary><p>Tak, większość usług wymaga zostawienia auta. Ustalamy to przy rezerwacji.</p></details>
+   <details><summary>Jak się umówić?</summary><p>W projekcie dla klienta w tym miejscu opisujemy jego sposób rezerwacji. W wersji demonstracyjnej formularz poniżej niczego nie wysyła.</p></details>
+  </div>
+ </div>
+</section>
+
+<section id="kontakt" style="background:#101215">
+ <div class="wrap contact">
+  <div>
+   <p class="eyebrow">Kontakt</p>
+   <h2>Umów wizytę</h2>
+   <p class="lead">Tak mógłby wyglądać formularz rezerwacji w projekcie dla klienta. W tej wersji demonstracyjnej nie wysyła ani nie zapisuje żadnych danych.</p>
+   <dl class="info">
+    <div><dt>Dane kontaktowe</dt><dd>Adres, telefon i mapa pojawią się tu w projekcie dla klienta.</dd></div>
+    <div><dt>Godziny otwarcia (przykład)</dt><dd>Pon–Pt 9:00–18:00<br>Sob 9:00–15:00<br>Niedziela: zamknięte</dd></div>
+   </dl>
+  </div>
+  <form id="f" novalidate>
+   <p class="dn">Formularz demonstracyjny: nie wpisuj prawdziwych danych osobowych. Nic nie jest wysyłane ani zapisywane.</p>
+   <label>Imię<input name="name" autocomplete="off" required><span class="err"></span></label>
+   <label>Telefon<input name="phone" type="tel" autocomplete="off" required><span class="err"></span></label>
+   <label>Usługa
+    <select name="service" required>
+     <option value="">Wybierz usługę</option><option>Korekta lakieru</option><option>Powłoka ceramiczna</option><option>Wnętrze i tapicerka</option><option>Pielęgnacja karoserii</option><option>Nie wiem, proszę o doradztwo</option>
+    </select><span class="err"></span></label>
+   <label>Marka i model auta<input name="car" placeholder="np. Audi A4, 2019"></label>
+   <label>Wiadomość<textarea name="msg" rows="3"></textarea></label>
+   <button class="btn" type="submit" id="send">Wyślij (demo)</button>
+   <div id="status" role="status" aria-live="polite"></div>
+  </form>
+ </div>
+ <div class="wrap"><div class="mapbox" role="img" aria-label="Miejsce na mapę dojazdu">Miejsce na mapę dojazdu. W projekcie dla klienta osadzamy tu mapę z jego adresem.</div></div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap fl">
+  <div><b style="color:var(--tx)">LUSTRO Detailing Studio</b><br>Fikcyjne studio · projekt demonstracyjny</div>
+  <ul><li><a href="#uslugi">Usługi</a></li><li><a href="#efekty">Efekty</a></li><li><a href="#faq">FAQ</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+  <div>Teksty, nazwy i ceny są przykładowe. Zdjęcia: Pexels.</div>
+ </div>
+</footer>
+
+<script>
+// Hide broken images so the dark fallback background shows
+document.querySelectorAll("img").forEach(i=>{const h=()=>i.classList.add("noimg");i.addEventListener("error",h);if(i.complete&&i.naturalWidth===0&&i.src)h()});
+// Before/after slider
+const ba=document.getElementById('ba');
+ba.querySelector('input').addEventListener('input',e=>ba.style.setProperty('--p',e.target.value+'%'));
+
+// Scroll reveal
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// Demo contact form: validates input only. Nothing is sent, stored or logged.
+const f=document.getElementById('f'),st=document.getElementById('status');
+f.addEventListener('submit',e=>{
+  e.preventDefault();
+  st.className='';st.textContent='';
+  let ok=true;
+  f.querySelectorAll('[required]').forEach(i=>{
+    const bad=!i.value.trim()||(i.name==='phone'&&i.value.replace(/\D/g,'').length<9);
+    i.setAttribute('aria-invalid',bad);
+    i.parentElement.querySelector('.err').textContent=bad?(i.name==='phone'?'Podaj poprawny numer telefonu.':'To pole jest wymagane.'):'';
+    if(bad)ok=false;
+  });
+  if(!ok)return;
+  f.reset();
+  f.querySelectorAll('[aria-invalid]').forEach(i=>i.removeAttribute('aria-invalid'));
+  st.className='info';
+  st.textContent='Tryb demonstracyjny: zgłoszenie nie zostało wysłane, a wpisane dane nie zostały zapisane. W projekcie dla klienta formularz łączy się z jego e-mailem lub systemem rezerwacji.';
+});
+</script>
+</body>
+</html>
